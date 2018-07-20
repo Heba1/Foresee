@@ -7,6 +7,9 @@ import os
 import matplotlib.pylab as plt
 import seaborn as sb
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+
 
 #class prediction
 class prediction:
@@ -19,6 +22,11 @@ class prediction:
     error 
     #the best algorithm
     pre_dict
+    #train variable
+    train
+    #test
+    test
+    
     def __init__(self,datase,predic_columns,targe):
         #initialization of data
         self.dataset=datase
@@ -32,8 +40,8 @@ class prediction:
         # make checked_data true for valid or false for not valid
         #return"valid or not valid "
         
-    
     def clean_data():
+        
         #delete null rows 
         # return deleted rows and the new dataset after delete rows
         
