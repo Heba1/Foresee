@@ -18,7 +18,7 @@ class prediction:
     predict_columns
     target
     #true or false based on check_data()
-    checked_data
+    checked_data=False
     # for error of the predict algorithm 
     error 
     #the best algorithm
@@ -40,8 +40,18 @@ class prediction:
         #check validation of data
         # make checked_data true for valid or false for not valid
         #return"valid or not valid "
-        if (dataset.isnull().sum().sum() == 0) and is_numeric_dtype(dataset['job_date']) and is_string_dtype(dataset['job_location']) and is_string_dtype(dataset['job_title']): #ceck null row (AND) check column type:
-            return "vlaid"
+        if (dataset.isnull().sum().sum() == 0)
+            numerical=false
+            for i in predic_columns:
+                if(is_numeric_dtype(dataset[i])):
+                    numerical=true
+                else:
+                    numerical=false
+                    break
+            if numerical:
+                return "valid"
+            else:
+                return "not vlaid"
         else: 
             return "not vlaid"
         
@@ -50,20 +60,43 @@ class prediction:
         #delete null rows 
         # return deleted rows and the new dataset after delete rows
         data_state  = check_data()
+        deleted
         if data_state == "not vlaid":
             #delet nill row from dataset
+            deleted=dataset[dataset==None]
             dataset = dataset[dataset!=None]
+            deleted.append(dataset.columns[dataset.isnull().any()])
             dataset = dataset.dropna(axis = 0)
-            # convert column type
-            dataset.job_date = dataset.job_date.astype(int)
-            dataset.job_date = dataset.job_location.astype(str)
-            dataset.job_date = dataset.job_title.astype(str)
+           
         #return the dataset after cleaning
-        return dataset
+       return dataset,deleted
+
+    def encode(data,column):
+        i=0
+        col=dict()
+        for q in range(len(data.index)):
+            x=data.iloc[q][column]
+            if not data.iloc[q][column] in col:
+                col.update({x:i})
+            
+                i+=1
+        data[column]=data[column].map(col)
+    
+        return col
+
+    def write(filename,my_dict):
+    with open(filename, 'w') as f:
+        [f.write('{0},{1}\n'.format(key, value)) for key, value in my_dict.items()]
+    
         
     def prepare():
         #split data to training and test 
-        # return boolen "true "if done "false " if not 
+        # return boolen "true "if done "false " if not
+        list_of_encode=dict()
+        for col in predict_columns :
+            if ~is_numeric_dtype(dataset[col]):
+                en_code=encode(dataset,col)
+                write(col,en_code)
         from sklearn.cross_validation import train_test_split
         train=dataset.sample(frac=0.8,random_state=1)
         test=dataset.loc[~ dataset.index.isin(train.index)]
@@ -73,20 +106,37 @@ class prediction:
         #call all predict functions if  checked_data is true 
         # choose least error "best algorithm for data "
         # return summary of the best predict 
-        linear_reg()
-        RF_reg()
-        ploynomial_reg()
-        return pre_dict
-        
+        if check_data()=="valid":
+            linear_reg()
+            RF_reg()
+            ploynomial_reg()
+            return pre_dict
+        else:
+            print("clean ur data and prepare first")
+            
         
     def linear_reg():
         #return error
-        
+        from sklearn.linear_model import LinearRegression
+        from sklearn.metrics import mean_squared_error
+        pre_dict=LinearRegression()
+        pre_dict.fit(train[columns],train[target])
+        prediction=pre_dict.predict(test[columns])
+        error=mean_squared_error(prediction,test[target])
+
         
         
     def RF_reg():
         #return error
-        #random forest 
+        #random forest
+        from sklearn.ensemble import RandomForestRegressor
+        rfr=RandomForestRegressor(n_estimators=100,min_samples_leaf=10,random_state=1)
+        rfr.fit(train[columns],train[target])
+        pre=rfr.predict(test[columns])
+        error_=mean_squared_error(pre,test[target])
+        if(error_<error):
+            pre_dict=rfr
+            error=error_
         
         
     def ploynomial_reg():
@@ -95,6 +145,7 @@ class prediction:
         ploy_error=100
         lin_regressor
         m=dataset.shape[0]
+        m_error
         for i in range (1:m):
             lin_regressor = LinearRegression()
             poly = PolynomialFeatures(i)
@@ -108,7 +159,7 @@ class prediction:
                 break
         if(ploy_error<error):
             pre_dict=lin_regressor
-            
+            error=m_error
         
         
         
