@@ -6,36 +6,21 @@ Created on Thu Jul 19 15:02:12 2018
 """
 import matplotlib.pyplot as plt
 import numpy as np
-import csv
 import pandas as pd
-
-count_rows=  sum(1 for row in csv.reader( open(r'C:\Users\sara\Desktop\WM\Job-prediction\data\csDataset.csv')))
-#print (count_rows-1)
 
 
 dataFrame =[]
-date = '2018'
-
-def count_city(filepath, city):
-    count = 0
-    with open(filepath, 'r') as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            if row['job_location'].lower() in city.lower() and row['job_date'] in '2018':
-                count = count +1
-                dataFrame.append(row['job_title'])
-    return count
-
+specialty=list()
+rate=list()
 def count (filepath,city):
     dataFrame=pd.read_csv(filepath)
     newdata=dataFrame[dataFrame.job_location == city]
     newdata = newdata[newdata.job_date == 2018]
     return newdata
     
-new=count(r'C:\Users\sara\Desktop\WM\Job-prediction\data\jobDataset_All.csv', 'Makkah')        
+new = count(r'C:\Users\sara\Desktop\WM\Job-prediction\data\jobDataset_All.csv', 'Makkah')        
 
-def encode(data,column):
-   
+def encode(data,column):  
    col=dict()
    for q in range(len(data)):
        x=data.iloc[q][column]
@@ -44,27 +29,28 @@ def encode(data,column):
        else:
             col[x]=col[x]+1    
    return col
-countt=encode(new,'job_specialty')
-print(countt)
-speci=list()
-cou=list()
-for key, value in countt.items():
-    speci.append(key)
-    cou.append(value)
-    
 
-print(speci)
-print(cou)
+countt=encode(new,'job_specialty')
+sorted_by_value = sorted(countt.items(), key=lambda kv: kv[1],reverse=True)
+#print (sorted_by_value)
+c = 0
+for key, value in sorted_by_value:   
+    if c < 10:
+        specialty.append(key)
+        rate.append(value)
+        c = c+1
+        
+    
 
 
 #https://medium.com/python-pandemonium/data-visualization-in-python-bar-graph-in-matplotlib-f1738602e9c4
 def plot_bar_x():
     # this is for plotting purpose
-    index = np.arange(len(speci))
-    plt.barh(index, cou)
-    plt.ylabel('Jobs', fontsize=5)
-    plt.xlabel('Growth rate', fontsize=5)
-    plt.yticks(index, speci, fontsize=5, rotation=30)
+    index = np.arange(len(specialty))
+    plt.bar(index, rate)
+    plt.xlabel('Jobs', fontsize=5)
+    plt.ylabel('Growth rate', fontsize=5)
+    plt.xticks(index, specialty, fontsize=5, rotation=80)
     plt.title('Trending jobs')
     plt.show()
     
