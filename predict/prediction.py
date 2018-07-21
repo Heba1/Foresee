@@ -40,7 +40,7 @@ class prediction:
         #check validation of data
         # make checked_data true for valid or false for not valid
         #return"valid or not valid "
-        if (dataset.isnull().sum().sum() == 0)
+        if (dataset.isnull().sum().sum() == 0):
             numerical=false
             for i in predic_columns:
                 if(is_numeric_dtype(dataset[i])):
