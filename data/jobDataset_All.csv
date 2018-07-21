@@ -601,11 +601,11 @@ job_date,job_title,job_location,job_specialty
 2013,Accountant,Riyadh,Accounting And Auditing
 2013,Internal Auditor,Jeddah,Accounting And Auditing
 2013,Accountant,Riyadh,Accounting And Auditing
-2013,Accountant,Makkah Province,Accounting And Auditing
+2013,Accountant,Makkah,Accounting And Auditing
 2013,Accountant,Riyadh,Accounting And Auditing
 2013,Accountant - Assistant Accountant,Yanbu Al-Sina'iya,Accounting And Auditing
 2013,Accounting,Riyadh,Accounting And Auditing
-2013,Financial Manager,Makkah Province,Accounting And Auditing
+2013,Financial Manager,Makkah,Accounting And Auditing
 2013,Accountant,Khobar,Accounting And Auditing
 2013,Accountant,Riyadh,Accounting And Auditing
 2013,Accountant,Riyadh,Accounting And Auditing
@@ -659,7 +659,7 @@ job_date,job_title,job_location,job_specialty
 2013,Accountant,Al-Kharj ,Accounting And Auditing
 2013,Accounting,Jeddah,Accounting And Auditing
 2012,Cost Accountant,Riyadh,Accounting And Auditing
-2012,Public Accountant,Eastern Province,Accounting And Auditing
+2012,Public Accountant,Dammam,Accounting And Auditing
 2012,Chief Accountant,Jeddah,Accounting And Auditing
 2012,treasurer,Dammam,Accounting And Auditing
 2012,Collector,Dammam,Accounting And Auditing
@@ -670,7 +670,7 @@ job_date,job_title,job_location,job_specialty
 2012,Assistant Accountant,Jeddah,Accounting And Auditing
 2012,Assistant Accountant,Jeddah,Accounting And Auditing
 2012,Financial Accountant,Riyadh,Accounting And Auditing
-2012,Internal Auditor,Makkah Province,Accounting And Auditing
+2012,Internal Auditor,Makkah,Accounting And Auditing
 2012,Accountant,Riyadh,Accounting And Auditing
 2012,Accounting in the women section,Riyadh,Accounting And Auditing
 2012,First Accountant,Riyadh,Accounting And Auditing
@@ -714,7 +714,7 @@ job_date,job_title,job_location,job_specialty
 2010,Accountant,Riyadh,Accounting And Auditing
 2010,Accountant,Hafer Al-Baten,Accounting And Auditing
 2009,Management Accountant,Riyadh,Accounting And Auditing
-2009,Accountant,Eastern Province,Accounting And Auditing
+2009,Accountant,Dammam,Accounting And Auditing
 2009,warehouse guard,Dammam,Accounting And Auditing
 2009,Accountant,Jeddah,Accounting And Auditing
 2009,Accountant,Wadi Al-Dawaser,Accounting And Auditing
@@ -1542,22 +1542,22 @@ job_date,job_title,job_location,job_specialty
 2013,secretary,Jeddah,Administration
 2013,secretary,Al-Mubarraz,Administration
 2013,Government Relations Officer,Riyadh,Administration
-2013,Director of the Office,Makkah Province,Administration
+2013,Director of the Office,Makkah,Administration
 2013,Department manger,Jazan,Administration
-2013,Government departments,Eastern Province,Administration
+2013,Government departments,Dammam,Administration
 2013,Administrative,Riyadh,Administration
-2013,Commercial Complex Officer,Asir Province,Administration
+2013,Commercial Complex Officer,Asir,Administration
 2013,Expeditor,Dammam,Administration
-2013,secretary,Makkah Province,Administration
+2013,secretary,Makkah,Administration
 2013,Complex Operations Manager,Al-Dawadmi,Administration
-2013,secretary,Makkah Province,Administration
-2013,public relations officer,Makkah Province,Administration
-2013,Complex Operations Manager,Eastern Province,Administration
+2013,secretary,Makkah,Administration
+2013,public relations officer,Makkah,Administration
+2013,Complex Operations Manager,Khobar,Administration
 2013,secretary,Riyadh,Administration
 2013,Executive secretary,Riyadh,Administration
-2013,Programming & Networking Specialist,Eastern Province,Administration
-2013,Marketing Specialist,Eastern Province,Administration
-2013,Director of Public Library,Makkah Province,Administration
+2013,Programming & Networking Specialist,Khobar,Administration
+2013,Marketing Specialist,Khobar,Administration
+2013,Director of Public Library,Makkah,Administration
 2013,Restaurant Managers (Training & Recruitment),Riyadh,Administration
 2013,Data entry,Riyadh,Administration
 2013,Advertising Specialist,Onaizah,Administration
@@ -1603,7 +1603,7 @@ job_date,job_title,job_location,job_specialty
 2013,Administrative (post-employment training),Riyadh,Administration
 2013,Administrative writer,Dammam,Administration
 2013,Collector,Khobar,Administration
-2013,security guard,Eastern Province,Administration
+2013,security guard,Khobar,Administration
 2013,Secretary-general,Jeddah,Administration
 2013,Executive Secretary,Jeddah,Administration
 2013,secretary,Riyadh,Administration
@@ -1710,7 +1710,7 @@ job_date,job_title,job_location,job_specialty
 2012,Director of Branch Management,Jeddah,Administration
 2012,branch manager,Jeddah,Administration
 2012,Salesperson Elevators,Medina,Administration
-2012,Manager Of Operation & Design Department,Eastern Province,Administration
+2012,Manager Of Operation & Design Department,Dammam,Administration
 2011,project manager,Riyadh,Administration
 2011,secretary,Jubail,Administration
 2011,Human Resources Coordinator,Riyadh,Administration
@@ -2365,7 +2365,7 @@ job_date,job_title,job_location,job_specialty
 2013,Customer Service Officer (bank phone),Riyadh,Customer Service
 2013,receptionist,Riyadh,Customer Service
 2013,Customer Service Employees,Riyadh,Customer Service
-2013,lobby Agent,Makkah Province,Customer Service
+2013,lobby Agent,Makkah,Customer Service
 2013,Receptionist,Jeddah,Customer Service
 2013,Call Center Agent,Jeddah,Customer Service
 2013,Receptionist and Sales Officer,Jeddah,Customer Service
@@ -2961,11 +2961,11 @@ job_date,job_title,job_location,job_specialty
 2013,Interior Designer Prefer Girls,Jeddah,Design
 2013,Auto CAd - interior designer,Riyadh,Design
 2013,marketing manager,Hail,Design
-2013,Engineer,Hail Province,Design
+2013,Engineer,Hail,Design
 2013,Decoration Technician,Khamis Mushait,Design
 2012,Designer of home decor and furniture,Riyadh,Design
 2012,Decoration Engineer,Najran,Design
-2012,branch manager,Eastern Province,Design
+2012,branch manager,Dammam,Design
 2012,Civilian Monitor Stone Interfaces,Medina,Design
 2012,A natural stone teacher,Onaizah,Design
 2012,Sales Representative,Jeddah,Design
@@ -3330,7 +3330,7 @@ job_date,job_title,job_location,job_specialty
 2014,Teacher / Trainer,Jeddah,Education 
 2014,Education Advisor,Riyadh,Education 
 2014,Director of the Institute,Jeddah,Education 
-2014,Computer trainer,Makkah Province,Education 
+2014,Computer trainer,Makkah,Education 
 2014,Director of curriculum development,Jeddah,Education 
 2014,"Director of polarization, acceptance and registration",Jeddah,Education 
 2014,Academy Director,Jeddah,Education 
@@ -3348,7 +3348,7 @@ job_date,job_title,job_location,job_specialty
 2013,Training Manager,Riyadh,Education 
 2013,Computer Trainer,Riyadh,Education 
 2013,English Language Trainer,Jazan,Education 
-2013,Coordinator of distance learning programs,Eastern Province,Education 
+2013,Coordinator of distance learning programs,Khobar,Education 
 2013,Computer Trainer,Khamis Mushait,Education 
 2013,English teacher,Khamis Mushait,Education 
 2013,ASP.Net Programmer,Riyadh,Education 
@@ -3365,7 +3365,7 @@ job_date,job_title,job_location,job_specialty
 2013,Training Specialist,Jubail,Education 
 2013,Instructor / Math teacher,All Provinces,Education 
 2013,Computer trainer,Riyadh,Education 
-2013,English teacher,Makkah Province,Education 
+2013,English teacher,Makkah,Education 
 2013,Director of the Institute,Dammam,Education 
 2013,receptionist,Dammam,Education 
 2013,Beauty Trainer,Dammam,Education 
@@ -3381,7 +3381,7 @@ job_date,job_title,job_location,job_specialty
 2013,Coach management,Makkah,Education 
 2013,Coordinator of training courses,Riyadh,Education 
 2013,English Language School,Jeddah,Education 
-2013,Registrar,Eastern Province,Education 
+2013,Registrar,Khobar,Education 
 2013,Coordinator of training courses,Riyadh,Education 
 2013,Instructor of arts and manual works,Riyadh,Education 
 2013,Sport Trainer,Riyadh,Education 
@@ -3400,7 +3400,7 @@ job_date,job_title,job_location,job_specialty
 2012,Faculty at College of Science,Al-Hofuf,Education 
 2012,Faculty at College of Pharmacology,Al-Hofuf,Education 
 2012,Full Time Faculty at College of Art,Al-Hofuf,Education 
-2012,Faculty at College of Education,Eastern Province,Education 
+2012,Faculty at College of Education,Khobar,Education 
 2012,Computer Trainer,Riyadh,Education 
 2012,Marketer,Riyadh,Education 
 2012,Receptionist or customer service,Riyadh,Education 
@@ -3415,7 +3415,7 @@ job_date,job_title,job_location,job_specialty
 2012,Computer Trainer,Riyadh,Education 
 2012,External Sales Representative,Riyadh,Education 
 2012,Researcher,Jeddah,Education 
-2012,Computer Teacher,Eastern Province,Education 
+2012,Computer Teacher,Khobar,Education 
 2011,Training Coordinator,Riyadh,Education 
 2011,Trainer / Counselor,Riyadh,Education 
 2011,Training Coordinator,Riyadh,Education 
@@ -3683,7 +3683,7 @@ job_date,job_title,job_location,job_specialty
 2014,Teacher / Trainer,Jeddah,Education 
 2014,Education Advisor,Riyadh,Education 
 2014,Director of the Institute,Jeddah,Education 
-2014,Computer trainer,Makkah Province,Education 
+2014,Computer trainer,Makkah,Education 
 2014,Director of curriculum development,Jeddah,Education 
 2014,"Director of polarization, acceptance and registration",Jeddah,Education 
 2014,Academy Director,Jeddah,Education 
@@ -3701,7 +3701,7 @@ job_date,job_title,job_location,job_specialty
 2013,Training Manager,Riyadh,Education 
 2013,Computer Trainer,Riyadh,Education 
 2013,English Language Trainer,Jazan,Education 
-2013,Coordinator of distance learning programs,Eastern Province,Education 
+2013,Coordinator of distance learning programs,Khobar,Education 
 2013,Computer Trainer,Khamis Mushait,Education 
 2013,English teacher,Khamis Mushait,Education 
 2013,ASP.Net Programmer,Riyadh,Education 
@@ -3718,7 +3718,7 @@ job_date,job_title,job_location,job_specialty
 2013,Training Specialist,Jubail,Education 
 2013,Instructor / Math teacher,All Provinces,Education 
 2013,Computer trainer,Riyadh,Education 
-2013,English teacher,Makkah Province,Education 
+2013,English teacher,Makkah,Education 
 2013,Director of the Institute,Dammam,Education 
 2013,receptionist,Dammam,Education 
 2013,Beauty Trainer,Dammam,Education 
@@ -3734,7 +3734,7 @@ job_date,job_title,job_location,job_specialty
 2013,Coach management,Makkah,Education 
 2013,Coordinator of training courses,Riyadh,Education 
 2013,English Language School,Jeddah,Education 
-2013,Registrar,Eastern Province,Education 
+2013,Registrar,Khobar,Education 
 2013,Coordinator of training courses,Riyadh,Education 
 2018,Welding (Drilling Experience),Dammam,"Engineering - Chemical, Petrochemical and Petroleum"
 2018,Precision Technician,Jubail,"Engineering - Chemical, Petrochemical and Petroleum"
@@ -3793,8 +3793,8 @@ job_date,job_title,job_location,job_specialty
 2013,lab technician,Riyadh,"Engineering - Chemical, Petrochemical and Petroleum"
 2013,Machine operator,Riyadh,"Engineering - Chemical, Petrochemical and Petroleum"
 2013,chemical,Jeddah,"Engineering - Chemical, Petrochemical and Petroleum"
-2013,Oil Well Drilling Rig (Driller),Eastern Province,"Engineering - Chemical, Petrochemical and Petroleum"
-2013,Tool Pusher,Eastern Province,"Engineering - Chemical, Petrochemical and Petroleum"
+2013,Oil Well Drilling Rig (Driller),Khobar,"Engineering - Chemical, Petrochemical and Petroleum"
+2013,Tool Pusher,Khobar,"Engineering - Chemical, Petrochemical and Petroleum"
 2013,Mechanical Engineer,All Provinces,"Engineering - Chemical, Petrochemical and Petroleum"
 2013,civil engineer,All Provinces,"Engineering - Chemical, Petrochemical and Petroleum"
 2013,Industrial Engineer,All Provinces,"Engineering - Chemical, Petrochemical and Petroleum"
@@ -3804,16 +3804,16 @@ job_date,job_title,job_location,job_specialty
 2013,Electrician,All Provinces,"Engineering - Chemical, Petrochemical and Petroleum"
 2013,Mechanical technician,All Provinces,"Engineering - Chemical, Petrochemical and Petroleum"
 2013,Surveyor,All Provinces,"Engineering - Chemical, Petrochemical and Petroleum"
-2013,Electrician,Eastern Province,"Engineering - Chemical, Petrochemical and Petroleum"
-2013,Mechanical Technician,Eastern Province,"Engineering - Chemical, Petrochemical and Petroleum"
-2013,Surveyor,Eastern Province,"Engineering - Chemical, Petrochemical and Petroleum"
+2013,Electrician,Khobar,"Engineering - Chemical, Petrochemical and Petroleum"
+2013,Mechanical Technician,Khobar,"Engineering - Chemical, Petrochemical and Petroleum"
+2013,Surveyor,Khobar,"Engineering - Chemical, Petrochemical and Petroleum"
 2013,Electrical and Mechanical Technician,Jubail,"Engineering - Chemical, Petrochemical and Petroleum"
 2012,Lab Technician,Jubail,"Engineering - Chemical, Petrochemical and Petroleum"
 2012,Administrative Assistant,Jubail,"Engineering - Chemical, Petrochemical and Petroleum"
 2012,Accountant,Riyadh,"Engineering - Chemical, Petrochemical and Petroleum"
-2012,Document Controller,Eastern Province,"Engineering - Chemical, Petrochemical and Petroleum"
+2012,Document Controller,Khobar,"Engineering - Chemical, Petrochemical and Petroleum"
 2012,Driver Forklift Forklift,Jubail,"Engineering - Chemical, Petrochemical and Petroleum"
-2012,Precision Machinery Technician,Eastern Province,"Engineering - Chemical, Petrochemical and Petroleum"
+2012,Precision Machinery Technician,Khobar,"Engineering - Chemical, Petrochemical and Petroleum"
 2012,Driver Forklift Forklift,Jubail,"Engineering - Chemical, Petrochemical and Petroleum"
 2012,welding,Jubail,"Engineering - Chemical, Petrochemical and Petroleum"
 2012,Electrician,Jubail,"Engineering - Chemical, Petrochemical and Petroleum"
@@ -4210,7 +4210,7 @@ job_date,job_title,job_location,job_specialty
 2014,Project Manager,Riyadh,Engineering - Civil and Architecture
 2014,civil engineer,Riyadh,Engineering - Civil and Architecture
 2014,civil engineer,Tabouk,Engineering - Civil and Architecture
-2014,CIVIL ENGINEER,Eastern Province,Engineering - Civil and Architecture
+2014,CIVIL ENGINEER,Khobar,Engineering - Civil and Architecture
 2014,General Surveyor,Riyadh,Engineering - Civil and Architecture
 2014,Site Supervisor,Riyadh,Engineering - Civil and Architecture
 2014,civil engineer,Tabouk,Engineering - Civil and Architecture
@@ -4266,20 +4266,20 @@ job_date,job_title,job_location,job_specialty
 2013,Plumber,Riyadh,Engineering - Civil and Architecture
 2013,civil engineer,Khamis Mushait,Engineering - Civil and Architecture
 2013,civil engineer,Al-Ahsaa,Engineering - Civil and Architecture
-2013,Electric engineer,Eastern Province,Engineering - Civil and Architecture
+2013,Electric engineer,Khobar,Engineering - Civil and Architecture
 2013,Civil Engineer (Project Manager),Riyadh,Engineering - Civil and Architecture
 2013,Saudi engineer,Riyadh,Engineering - Civil and Architecture
 2013,Computer Quantities,Riyadh,Engineering - Civil and Architecture
 2013,Civil Observer,Riyadh,Engineering - Civil and Architecture
 2013,Engineer Medical Devices,Makkah,Engineering - Civil and Architecture
-2013,Engineer (Fire Extinguishing Systems),Eastern Province,Engineering - Civil and Architecture
+2013,Engineer (Fire Extinguishing Systems),Khobar,Engineering - Civil and Architecture
 2013,civil engineer,Khobar,Engineering - Civil and Architecture
 2013,civil engineer,Al-Kharj ,Engineering - Civil and Architecture
 2013,Architect,Al-Kharj ,Engineering - Civil and Architecture
 2013,Architect,Riyadh,Engineering - Civil and Architecture
 2013,Architect,Riyadh,Engineering - Civil and Architecture
 2013,Civil Engineer (Project Manager),Riyadh,Engineering - Civil and Architecture
-2013,Electric engineer,Eastern Province,Engineering - Civil and Architecture
+2013,Electric engineer,Khobar,Engineering - Civil and Architecture
 2013,Receptionist,Dhahran,Engineering - Civil and Architecture
 2013,Administrative Affairs Officer,Dhahran,Engineering - Civil and Architecture
 2013,Expeditor,Dhahran,Engineering - Civil and Architecture
@@ -4322,14 +4322,14 @@ job_date,job_title,job_location,job_specialty
 2012,Insurance,Riyadh,Engineering - Civil and Architecture
 2012,civil engineer,Riyadh,Engineering - Civil and Architecture
 2012,a supervising engineer,Khobar,Engineering - Civil and Architecture
-2012,Faculty at College of Engineering,Eastern Province,Engineering - Civil and Architecture
-2012,HVAC Engineer,Makkah Province,Engineering - Civil and Architecture
+2012,Faculty at College of Engineering,Khobar,Engineering - Civil and Architecture
+2012,HVAC Engineer,Makkah,Engineering - Civil and Architecture
 2012,Video Photographer and Montage Professional,Najran,Engineering - Civil and Architecture
 2012,Sound Engineer,Najran,Engineering - Civil and Architecture
 2012,civil engineer,Najran,Engineering - Civil and Architecture
 2012,Director of water plant production,Riyadh,Engineering - Civil and Architecture
 2012,civil engineer,Dammam,Engineering - Civil and Architecture
-2012,civil engineer,Eastern Province,Engineering - Civil and Architecture
+2012,civil engineer,Khobar,Engineering - Civil and Architecture
 2012,Director of road projects and bridges,Riyadh,Engineering - Civil and Architecture
 2012,civil engineer,Rafha,Engineering - Civil and Architecture
 2012,Architect,Al-Kharj ,Engineering - Civil and Architecture
@@ -4345,7 +4345,7 @@ job_date,job_title,job_location,job_specialty
 2012,Director of Project Management,All Provinces,Engineering - Civil and Architecture
 2012,Surveyor,Jeddah,Engineering - Civil and Architecture
 2012,Road Engineer,Jeddah,Engineering - Civil and Architecture
-2011,Road surveyor,Eastern Province,Engineering - Civil and Architecture
+2011,Road surveyor,Khobar,Engineering - Civil and Architecture
 2011,Civil Engineer Roads,Khobar,Engineering - Civil and Architecture
 2011,Draftsman,Dammam,Engineering - Civil and Architecture
 2011,Mechanical Designer,Dammam,Engineering - Civil and Architecture
@@ -4367,7 +4367,7 @@ job_date,job_title,job_location,job_specialty
 2011,civil engineer,Riyadh,Engineering - Civil and Architecture
 2010,Architect or Civil Engineer,Riyadh,Engineering - Civil and Architecture
 2010,Projects Coordinator,Riyadh,Engineering - Civil and Architecture
-2010,civil engineer,Eastern Province,Engineering - Civil and Architecture
+2010,civil engineer,Khobar,Engineering - Civil and Architecture
 2010,Civil Engineer (Site Manager),Riyadh,Engineering - Civil and Architecture
 2010,Mechanical Engineer Supervisor,Riyadh,Engineering - Civil and Architecture
 2010,Mechanical Engineer (Air Conditioning),Riyadh,Engineering - Civil and Architecture
@@ -4385,7 +4385,7 @@ job_date,job_title,job_location,job_specialty
 2010,Asphalt Monitor,Medina,Engineering - Civil and Architecture
 2010,civil engineer,Riyadh,Engineering - Civil and Architecture
 2010,Architect,Hafer Al-Baten,Engineering - Civil and Architecture
-2009,Electro Mechanical Engineer,Eastern Province,Engineering - Civil and Architecture
+2009,Electro Mechanical Engineer,Khobar,Engineering - Civil and Architecture
 2009,Architect,Wadi Al-Dawaser,Engineering - Civil and Architecture
 2009,Surveyor Engineer,Medina,Engineering - Civil and Architecture
 2009,Architect,Riyadh,Engineering - Civil and Architecture
@@ -4905,14 +4905,14 @@ job_date,job_title,job_location,job_specialty
 2014,Electric engineer,Jeddah,Engineering - Electrical
 2014,Electronics Technician,Riyadh,Engineering - Electrical
 2014,Electric painter,Khobar,Engineering - Electrical
-2014,Electrical Engineer,Eastern Province,Engineering - Electrical
+2014,Electrical Engineer,Khobar,Engineering - Electrical
 2014,electrical engineer,Riyadh,Engineering - Electrical
 2014,Electric engineer,Khobar,Engineering - Electrical
 2014,Electricity technician,Riyadh,Engineering - Electrical
 2014,Airport Terminal Supervisor,Riyadh,Engineering - Electrical
 2014,Electricity technician,Ras Tanura,Engineering - Electrical
 2014,Electric engineer,Riyadh,Engineering - Electrical
-2014,Electrical Engineer,Madinah Province,Engineering - Electrical
+2014,Electrical Engineer,Medina,Engineering - Electrical
 2014,Electrical connections,Riyadh,Engineering - Electrical
 2014,Electric engineer,Riyadh,Engineering - Electrical
 2014,Electricity technician,Medina,Engineering - Electrical
@@ -4922,7 +4922,7 @@ job_date,job_title,job_location,job_specialty
 2014,electrical engineer,Dammam,Engineering - Electrical
 2014,car electrician,Dammam,Engineering - Electrical
 2014,electrical engineer,Dammam,Engineering - Electrical
-2014,car electrician,Eastern Province,Engineering - Electrical
+2014,car electrician,Khobar,Engineering - Electrical
 2014,Technical (Job Training),Jeddah,Engineering - Electrical
 2014,electrical engineer,Yanbu Al-Sina'iya,Engineering - Electrical
 2014,Electrical Engineer (Construction),Jeddah,Engineering - Electrical
@@ -5066,7 +5066,7 @@ job_date,job_title,job_location,job_specialty
 2014,Sales engineer,Riyadh,Engineering - Mechanical
 2014,Mechanical Engineer (Fire Extinguishing Systems),Riyadh,Engineering - Mechanical
 2014,mechanical engineer,Jeddah,Engineering - Mechanical
-2014,mechanical engineer,Madinah Province,Engineering - Mechanical
+2014,mechanical engineer,Medina,Engineering - Mechanical
 2014,mechanical engineer,All Provinces,Engineering - Mechanical
 2014,car mechanic,Jeddah,Engineering - Mechanical
 2014,Mechanical Production Engineer,Dammam,Engineering - Mechanical
@@ -5076,8 +5076,8 @@ job_date,job_title,job_location,job_specialty
 2014,Welding technician,Dammam,Engineering - Mechanical
 2014,Project Manager,Riyadh,Engineering - Mechanical
 2014,Engineer in Relevant Mechanical,Riyadh,Engineering - Mechanical
-2014,Maintenance Lead Engineer,Eastern Province,Engineering - Mechanical
-2014,Production Lead Engineer,Eastern Province,Engineering - Mechanical
+2014,Maintenance Lead Engineer,Khobar,Engineering - Mechanical
+2014,Production Lead Engineer,Khobar,Engineering - Mechanical
 2014,Lead QA Engineer,Dammam,Engineering - Mechanical
 2014,mechanical engineer,Makkah,Engineering - Mechanical
 2014,Mechanical Technician,Dammam,Engineering - Mechanical
@@ -6022,7 +6022,7 @@ job_date,job_title,job_location,job_specialty
 2014,Real Estate Marketer,Dammam,Finance
 2014,Engineer,Jeddah,Finance
 2014,Real Estate Marketer,Riyadh,Finance
-2014,Real Estate Marketer,Eastern Province,Finance
+2014,Real Estate Marketer,Khobar,Finance
 2014,Receptionist,Khobar,Finance
 2014,marketing manager,Riyadh,Finance
 2014,project manager,Riyadh,Finance
@@ -6036,7 +6036,7 @@ job_date,job_title,job_location,job_specialty
 2014,Real Estate Office Administrator,Dammam,Finance
 2013,Real Estate Marketer,Jeddah,Finance
 2013,Appraiser and researcher real estate sites,All Provinces,Finance
-2013,Field Marketer,Al-Qasem Province,Finance
+2013,Field Marketer,buraydah,Finance
 2013,Accountant,Jeddah,Finance
 2013,Director of engineering projects,Riyadh,Finance
 2013,Real Estate Marketer,Riyadh,Finance
@@ -6044,7 +6044,7 @@ job_date,job_title,job_location,job_specialty
 2012,Director of Real Estate Marketing,Jeddah,Finance
 2012,Real Estate Marketer,Riyadh,Finance
 2012,Real Estate Marketer,Makkah,Finance
-2012,Real estate sales representative,Eastern Province,Finance
+2012,Real estate sales representative,Khobar,Finance
 2012,Real Estate Sales Representative,Riyadh,Finance
 2012,secretary,Riyadh,Finance
 2012,A branch official in a real estate company,Riyadh,Finance
@@ -6784,7 +6784,7 @@ job_date,job_title,job_location,job_specialty
 2014,manager assistant,Riyadh,Human resources
 2014,Personnel Specialist,Riyadh,Human resources
 2014,Marketing Manager,Dammam,Human resources
-2014,Recruitment and Training Specialist,Tabouk Province,Human resources
+2014,Recruitment and Training Specialist,Tabouk,Human resources
 2014,HR Manager,Riyadh,Human resources
 2014,Human Resources Officer,Riyadh,Human resources
 2014,Human Resources Officer,Jeddah,Human resources
@@ -6999,13 +6999,13 @@ job_date,job_title,job_location,job_specialty
 2013,Executive Head of Human Resources and Services,Jeddah,Human resources
 2013,Administrator,Dammam,Human resources
 2013,Employment Advisor,Dammam,Human resources
-2013,Personnel Officer,Makkah Province,Human resources
+2013,Personnel Officer,Makkah,Human resources
 2013,External delegate of government departments,Riyadh,Human resources
 2013,Human Resources Officer,Riyadh,Human resources
 2013,Personnel Officer,Riyadh,Human resources
 2012,Human Resource Specialist,Jeddah,Human resources
 2012,Chief Executive Officer for Human Resources,Jeddah,Human resources
-2012,Recruitment Coordinator - Qassim,Al-Qasem Province,Human resources
+2012,Recruitment Coordinator - Qassim,buraydah,Human resources
 2012,Government departments,Jeddah,Human resources
 2012,Human Resource Specialist,Riyadh,Human resources
 2012,Purchasing Representative,Riyadh,Human resources
@@ -7561,7 +7561,7 @@ job_date,job_title,job_location,job_specialty
 2014,Marketing Representative,Riyadh,Sales and Marketing
 2014,A photographer,Riyadh,Sales and Marketing
 2014,Sales Representative,Riyadh,Sales and Marketing
-2014,Senior Graphic Designer,Eastern Province,Sales and Marketing
+2014,Senior Graphic Designer,Khobar,Sales and Marketing
 2014,Sales Representative,Riyadh,Sales and Marketing
 2014,Marketer,Riyadh,Sales and Marketing
 2014,Sales Representative,All Provinces,Sales and Marketing
@@ -7775,7 +7775,7 @@ job_date,job_title,job_location,job_specialty
 2014,Representing the sales and marketing of my phone,Riyadh,Sales and Marketing
 2013,Marketer (e-shop),Jeddah,Sales and Marketing
 2013,Sales and marketing representatives,Riyadh,Sales and Marketing
-2013,Sales Representative,Makkah Province,Sales and Marketing
+2013,Sales Representative,Makkah,Sales and Marketing
 2013,seller,Jeddah,Sales and Marketing
 2013,Marketing Officer,Riyadh,Sales and Marketing
 2013,Sales Representative,Khobar,Sales and Marketing
@@ -7786,7 +7786,7 @@ job_date,job_title,job_location,job_specialty
 2013,Marketing Coordinator - Marketing Support,Riyadh,Sales and Marketing
 2013,Sales,Riyadh,Sales and Marketing
 2013,Sales Representative,Jubail,Sales and Marketing
-2013,Sales Officer,Makkah Province,Sales and Marketing
+2013,Sales Officer,Makkah,Sales and Marketing
 2013,Webmaster,Khobar,Sales and Marketing
 2013,Propaganda and advertising,Jeddah,Sales and Marketing
 2013,Sales Representative,Al-Kharj ,Sales and Marketing
@@ -7799,7 +7799,7 @@ job_date,job_title,job_location,job_specialty
 2013,Sales Representative,Makkah,Sales and Marketing
 2013,Medical Sales Supervisor,Riyadh,Sales and Marketing
 2013,Marketer courses,Riyadh,Sales and Marketing
-2013,Salesman,Eastern Province,Sales and Marketing
+2013,Salesman,Dammam,Sales and Marketing
 2013,Sales Supervisor,Dammam,Sales and Marketing
 2013,Brand Manager,Dammam,Sales and Marketing
 2013,Marketing Specialist,Riyadh,Sales and Marketing
@@ -7807,7 +7807,7 @@ job_date,job_title,job_location,job_specialty
 2013,Sales and Marketing Specialist,Riyadh,Sales and Marketing
 2013,Marketer,Al-Hofuf,Sales and Marketing
 2013,Auto Finance Specialist,All Provinces,Sales and Marketing
-2013,Real Estate Marketer,Makkah Province,Sales and Marketing
+2013,Real Estate Marketer,Makkah,Sales and Marketing
 2013,My phone receiver,Jeddah,Sales and Marketing
 2013,Marketer (field),Jeddah,Sales and Marketing
 2013,Marketing Representative,Riyadh,Sales and Marketing
@@ -7906,7 +7906,7 @@ job_date,job_title,job_location,job_specialty
 2011,Assistant resource delegate,Taif,Sales and Marketing
 2011,Sales Representative,Riyadh,Sales and Marketing
 2011,Sales Representative,Riyadh,Sales and Marketing
-2011,Sales Representative,Makkah Province,Sales and Marketing
+2011,Sales Representative,Makkah,Sales and Marketing
 2011,Sales representative,Jeddah,Sales and Marketing
 2011,A bank sales representative,Riyadh,Sales and Marketing
 2011,Advertising Agent,Riyadh,Sales and Marketing
@@ -7938,13 +7938,13 @@ job_date,job_title,job_location,job_specialty
 2010,Sales Representative,Riyadh,Sales and Marketing
 2010,Sales Representative,Khobar,Sales and Marketing
 2009,Software Marketer,Riyadh,Sales and Marketing
-2009,Sales Officer,Eastern Province,Sales and Marketing
+2009,Sales Officer,Dammam,Sales and Marketing
 2009,Marketing Officer,Jeddah,Sales and Marketing
 2009,My phone marketer,Jeddah,Sales and Marketing
 2009,Delegate / sales representative,Taif,Sales and Marketing
 2009,Auto Sales Representative,Dammam,Sales and Marketing
 2009,Sales Representative,Riyadh,Sales and Marketing
-2009,Accountant,Eastern Province,Sales and Marketing
+2009,Accountant,Dammam,Sales and Marketing
 2009,Marketing delegate,Jeddah,Sales and Marketing
 2009,marketing manager,Riyadh,Sales and Marketing
 2009,Delegate or marketing delegate,Jeddah,Sales and Marketing
@@ -8541,7 +8541,7 @@ job_date,job_title,job_location,job_specialty
 2013,Executive Secretary,Jeddah,Secritarial and Clerical Assistant
 2013,Administrative Officer,Riyadh,Secritarial and Clerical Assistant
 2013,Field reporter,Riyadh,Secritarial and Clerical Assistant
-2013,File organizer,Eastern Province,Secritarial and Clerical Assistant
+2013,File organizer,Dammam,Secritarial and Clerical Assistant
 2013,manager assistant,Medina,Secritarial and Clerical Assistant
 2013,Supply Chain & Office Executive,Jeddah,Secritarial and Clerical Assistant
 2013,Executive Secretary,Riyadh,Secritarial and Clerical Assistant
@@ -8967,7 +8967,7 @@ job_date,job_title,job_location,job_specialty
 2014,Director of tourist site services,Riyadh,Travel and Tourism Services
 2014,Ticket Sales Officer,Riyadh,Travel and Tourism Services
 2014,Ticket clerk,Riyadh,Travel and Tourism Services
-2013,Employee booking and issuing tickets,Eastern Province,Travel and Tourism Services
+2013,Employee booking and issuing tickets,Dammam,Travel and Tourism Services
 2013,Ticket clerk,Jeddah,Travel and Tourism Services
 2013,Expeditor,Jeddah,Travel and Tourism Services
 2013,Employee booking and issuing tickets,Riyadh,Travel and Tourism Services
@@ -9039,7 +9039,7 @@ job_date,job_title,job_location,job_specialty
 2018,Senior Windows Systems Administrator,Jeddah,Computer Science
 2018,Information Security Specialist,Riyadh,Computer Science
 2018,storage and backup administrator,Hafr Albaten,Computer Science
-2018,Digital Project Manager,Mecca,Computer Science
+2018,Digital Project Manager,Makkah,Computer Science
 2018,Project Manager,Jeddah,Computer Science
 2018,Project Manager Big Data Analytics,Jubail,Computer Science
 2018,Application Project Manager /IT Network Project Manager,Jeddah,Computer Science

@@ -7,15 +7,14 @@ Created on Thu Jul 19 15:02:12 2018
 import matplotlib.pyplot as plt
 import numpy as np
 import csv
-
+import pandas as pd
 
 count_rows=  sum(1 for row in csv.reader( open(r'C:\Users\sara\Desktop\WM\Job-prediction\data\csDataset.csv')))
 #print (count_rows-1)
 
 
 dataFrame =[]
-
-
+date = '2018'
 
 def count_city(filepath, city):
     count = 0
@@ -27,10 +26,16 @@ def count_city(filepath, city):
                 dataFrame.append(row['job_title'])
     return count
 
-count_city(r'C:\Users\sara\Desktop\WM\Job-prediction\data\csDataset.csv', 'makkah')        
+def count (filepath,city):
+    dataFrame=pd.read_csv(filepath)
+    newdata=dataFrame[dataFrame.job_location == city]
+    newdata = newdata[newdata.job_date == 2018]
+    return newdata
+    
+new=count(r'C:\Users\sara\Desktop\WM\Job-prediction\data\jobDataset_All.csv', 'Makkah')        
 
 def encode(data,column):
-   i=0
+   
    col=dict()
    for q in range(len(data)):
        x=data.iloc[q][column]
@@ -39,26 +44,29 @@ def encode(data,column):
        else:
             col[x]=col[x]+1    
    return col
-print (encode(dataFrame,'job_title'))
+countt=encode(new,'job_specialty')
+print(countt)
+speci=list()
+cou=list()
+for key, value in countt.items():
+    speci.append(key)
+    cou.append(value)
+    
 
-
-
-
+print(speci)
+print(cou)
 
 
 #https://medium.com/python-pandemonium/data-visualization-in-python-bar-graph-in-matplotlib-f1738602e9c4
-label = ['Computer Science','kkkk','ggggg','eeee','aaaa','ssss','dddd','fff']
-no_movies = [count_city(r'C:\Users\sara\Desktop\WM\Job-prediction\data\csDataset.csv',"jeddah"),]
-
 def plot_bar_x():
     # this is for plotting purpose
-    index = np.arange(len(label))
-    plt.barh(index, no_movies)
-    plt.ylabel('Genre', fontsize=5)
-    plt.xlabel('No of Movies', fontsize=5)
-    plt.yticks(index, label, fontsize=5, rotation=30)
-    plt.title('Market Share for Each Genre 1995-2017')
+    index = np.arange(len(speci))
+    plt.barh(index, cou)
+    plt.ylabel('Jobs', fontsize=5)
+    plt.xlabel('Growth rate', fontsize=5)
+    plt.yticks(index, speci, fontsize=5, rotation=30)
+    plt.title('Trending jobs')
     plt.show()
     
     
-#plot_bar_x()   
+plot_bar_x()   
