@@ -4,6 +4,7 @@ import sklearn
 import seaborn
 import matplotlib
 import os
+import math
 import numpy as np
 import matplotlib.pylab as plt
 import seaborn as sb
@@ -12,6 +13,8 @@ from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
 from pandas.api.types import is_numeric_dtype
 from pandas.api.types import is_string_dtype
+
+from sklearn.svm import SVR
 
 from sklearn.linear_model import Ridge
 from sklearn.pipeline import make_pipeline
@@ -159,16 +162,18 @@ class prediction_Class:
         lin_regressor=""
         m=self.dataset.shape[0]
         m_error=""
+        
+        
         for i in range(1,m):
             lin_regressor = LinearRegression()
             poly = PolynomialFeatures(i)
-            X_transform = poly.fit_transform(self.train[self.predict_columns])
+            X_transform = poly.fit_transform(self.train[self.predict_columns].reset_index().values)
            
-            lin_regressor.fit(X_transform,self.train[self.target]) 
-            y_transform = poly.fit_transform(self.test[self.predict_columns])
+            lin_regressor.fit(X_transform,self.train[self.target].reset_index().values) 
+            y_transform = poly.fit_transform(self.test[self.predict_columns].reset_index().values)
             y_preds = lin_regressor.predict(y_transform)
-            plt.plot(self.train[self.predict_columns], lin_regressor.predict(X_transform),color='g')
-            m_error=mean_squared_error(y_preds,self.test[self.target])
+            plt.plot(self.train[self.predict_columns].reset_index().values, lin_regressor.predict(X_transform),color='g')
+            m_error=mean_squared_error(y_preds,self.test[self.target].reset_index().values)
             if(m_error+0.0001<ploy_error):
                 ploy_error=m_error
             
@@ -176,7 +181,48 @@ class prediction_Class:
         if(ploy_error<self.error):
             self.pre_dict=lin_regressor
             self.error=m_error
+        """
 
+        koeficienti_polinom = np.polyfit(self.train[self.predict_columns].values.ravel(), self.train[self.target].values.ravel(), 3)
+
+        a=koeficienti_polinom[0]
+        b=koeficienti_polinom[1]
+        c=koeficienti_polinom[2]
+    
+        xval=np.linspace(np.min(self.train[self.predict_columns]), np.max(self.train[self.predict_columns]))   
+            
+        regression=koeficienti_polinom[0] * xval**2 + koeficienti_polinom[1]*xval +koeficienti_polinom[2] 
+
+          
+        predY = koeficienti_polinom[0] * self.train[self.predict_columns]**2 + koeficienti_polinom[1]*self.train[self.predict_columns] + koeficienti_polinom[2]   
+
+        plt.scatter(self.train[self.predict_columns],self.train[self.target], s=20, color="blue" )      
+        plt.scatter(self.train[self.predict_columns], predY, color="red")    
+        plt.plot(xval, regression, color="black", linewidth=1)  
+        
+        
+        
+        
+        
+        
+        
+       
+        dates=np.reshape(self.train[self.predict_columns],(len(self.train[self.predict_columns]),1))
+
+        svr_poly=SVR(kernel="poly",C=1e3, degree=2)
+        svr_poly.fit(self.train[self.predict_columns],self.train[self.target])
+
+        plt.scatter(self.train[self.predict_columns],self.train[self.target], color="blue")
+        plt.plot(self.train[self.predict_columns], svr_poly.predict(self.train[self.predict_columns]), color="red")
+
+        plt.xlabel("Size")
+        plt.ylabel("Cost")
+        plt.title("prediction")
+        plt.legend()
+
+        plt.show()
+        
+        """
     
         
         

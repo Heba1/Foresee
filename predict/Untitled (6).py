@@ -55,6 +55,7 @@ n_data=pd.DataFrame({"date":date,"count":count})
 n_data
 
 
+
 # In[84]:
 
 pre_cols=["date"]
@@ -62,7 +63,7 @@ target="count"
 n_data["date"]=pd.to_numeric(n_data["date"], errors='coerce')
 n_data["count"]=pd.to_numeric(n_data["count"], errors='coerce')
 n_data.sort_values('date')
-
+n_data["date"]-=2008
 p =prediction_Class(n_data,pre_cols,target)
 
 
