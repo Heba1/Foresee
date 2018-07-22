@@ -14,7 +14,7 @@ from pandas.api.types import is_string_dtype
 
 #class prediction
 class prediction:
-    dataset
+    dataset 
     predict_columns
     target
     #true or false based on check_data()
@@ -27,6 +27,8 @@ class prediction:
     train
     #test
     test
+    
+    
     
     def __init__(self,datase,predic_columns,targe):
         #initialization of data
@@ -160,12 +162,13 @@ class prediction:
         if(ploy_error<error):
             pre_dict=lin_regressor
             error=m_error
+            
         
-        
-        
-    def predict(varibles):
+    
+    def predict():
         #take array of paramters country year job title 
         # return the predict "" count of jobs of this job "" 
+       
         
         
         
