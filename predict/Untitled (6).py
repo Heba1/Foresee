@@ -61,6 +61,8 @@ pre_cols=["date"]
 target="count"
 n_data["date"]=pd.to_numeric(n_data["date"], errors='coerce')
 n_data["count"]=pd.to_numeric(n_data["count"], errors='coerce')
+n_data.sort_values('date')
+
 p =prediction_Class(n_data,pre_cols,target)
 
 

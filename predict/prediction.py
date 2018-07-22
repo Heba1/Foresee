@@ -4,6 +4,7 @@ import sklearn
 import seaborn
 import matplotlib
 import os
+import numpy as np
 import matplotlib.pylab as plt
 import seaborn as sb
 from sklearn.model_selection import train_test_split
@@ -11,6 +12,9 @@ from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
 from pandas.api.types import is_numeric_dtype
 from pandas.api.types import is_string_dtype
+
+from sklearn.linear_model import Ridge
+from sklearn.pipeline import make_pipeline
 
 
 class prediction_Class:
@@ -101,15 +105,19 @@ class prediction_Class:
                 en_code=self.encode(self.dataset,col)
                 self.write(col,en_code)
         from sklearn.cross_validation import train_test_split
-        self.train=self.dataset.sample(frac=0.8,random_state=1)
-        self.test=self.dataset.loc[~ self.dataset.index.isin(self.train.index)]
-        #self.test=self.dataset.sample(frac=0.5,random_state=1)
+        self.train=self.dataset.sample(frac=1,random_state=None)
+        self.train=self.train.sort_values('date')
+        #self.test=self.dataset.loc[~ self.dataset.index.isin(self.train.index)]
+        self.test=self.train
         
     def best_predict(self):
         #call all predict functions if  checked_data is true 
         # choose least error "best algorithm for data "
         # return summary of the best predict 
         if self.check_data()=="valid":
+            plt.plot(self.train[self.predict_columns],self.train[self.target])
+            plt.show()
+          
             self.linear_reg()
             self.RF_reg()
             self.ploynomial_reg()
@@ -134,7 +142,7 @@ class prediction_Class:
         #random forest
         from sklearn.ensemble import RandomForestRegressor
         from sklearn.metrics import mean_squared_error
-        rfr=RandomForestRegressor(n_estimators=100,min_samples_leaf=10,random_state=1)
+        rfr=RandomForestRegressor(n_estimators=100,min_samples_leaf=10,random_state=0)
         rfr.fit(self.train[self.predict_columns],self.train[self.target])
         pre=rfr.predict(self.test[self.predict_columns])
         error_=mean_squared_error(pre,self.test[self.target])
@@ -146,7 +154,7 @@ class prediction_Class:
     def ploynomial_reg(self):
         #return error 
         # ploynomial regression with its all possible degrees and return the best one 
-        ploy_error=100
+        ploy_error=1000000000000000000000
         from sklearn.metrics import mean_squared_error
         lin_regressor=""
         m=self.dataset.shape[0]
@@ -155,19 +163,21 @@ class prediction_Class:
             lin_regressor = LinearRegression()
             poly = PolynomialFeatures(i)
             X_transform = poly.fit_transform(self.train[self.predict_columns])
+           
             lin_regressor.fit(X_transform,self.train[self.target]) 
-            
-            y_preds = lin_regressor.predict(self.test[self.predict_columns])
+            y_transform = poly.fit_transform(self.test[self.predict_columns])
+            y_preds = lin_regressor.predict(y_transform)
+            plt.plot(self.train[self.predict_columns], lin_regressor.predict(X_transform),color='g')
             m_error=mean_squared_error(y_preds,self.test[self.target])
             if(m_error+0.0001<ploy_error):
                 ploy_error=m_error
-            else:
-                break
+            
+       
         if(ploy_error<self.error):
             self.pre_dict=lin_regressor
             self.error=m_error
 
-     
+    
         
         
     #def predict(varibles):
