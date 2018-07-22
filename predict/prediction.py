@@ -12,21 +12,27 @@ from sklearn.linear_model import LinearRegression
 from pandas.api.types import is_numeric_dtype
 from pandas.api.types import is_string_dtype
 
-#class prediction
+
 class prediction_Class:
-    dataset
-    predict_columns
-    target
+    
+
+
+    dataset="" 
+
+    predict_columns=""
+    target=""
     #true or false based on check_data()
     checked_data=False
     # for error of the predict algorithm 
-    error 
+    error="" 
     #the best algorithm
-    pre_dict
+    pre_dict=""
     #train variable
-    train
+    train=""
     #test
-    test
+    test=""
+    
+    
     
     def __init__(self,datase,predic_columns,targe):
         #initialization of data
@@ -36,17 +42,17 @@ class prediction_Class:
     
     
     
-    def check_data():
+    def check_data(self):
         #check validation of data
         # make checked_data true for valid or false for not valid
         #return"valid or not valid "
-        if (dataset.isnull().sum().sum() == 0):
-            numerical=false
-            for i in predic_columns:
-                if(is_numeric_dtype(dataset[i])):
-                    numerical=true
+        if (self.dataset.isnull().sum().sum() == 0):
+            numerical=False
+            for i in self.predict_columns:
+                if(is_numeric_dtype(self.dataset[i])):
+                    numerical=True
                 else:
-                    numerical=false
+                    numerical=False
                     break
             if numerical:
                 return "valid"
@@ -56,22 +62,19 @@ class prediction_Class:
             return "not vlaid"
         
         
-    def clean_data():
+    def clean_data(self):
         #delete null rows 
         # return deleted rows and the new dataset after delete rows
-        data_state  = check_data()
-        deleted
+        data_state  = self.check_data()
+       
         if data_state == "not vlaid":
             #delet nill row from dataset
-            deleted=dataset[dataset==None]
-            dataset = dataset[dataset!=None]
-            deleted.append(dataset.columns[dataset.isnull().any()])
-            dataset = dataset.dropna(axis = 0)
+            self.dataset =self.dataset.dropna(axis = 0)
            
         #return the dataset after cleaning
-        return dataset,deleted
+        return self.dataset
 
-    def encode(data,column):
+    def encode(self,data,column):
         i=0
         col=dict()
         for q in range(len(data.index)):
@@ -89,85 +92,85 @@ class prediction_Class:
             [f.write('{0},{1}\n'.format(key, value)) for key, value in my_dict.items()]
     
         
-    def prepare():
+    def prepare(self):
         #split data to training and test 
         # return boolen "true "if done "false " if not
-        list_of_encode=dict()
-        for col in predict_columns :
-            if ~is_numeric_dtype(dataset[col]):
-                en_code=encode(dataset,col)
-                write(col,en_code)
+        
+        for col in self.predict_columns :
+            if (str(self.dataset[col].dtype)!='int64'):
+                en_code=self.encode(self.dataset,col)
+                self.write(col,en_code)
         from sklearn.cross_validation import train_test_split
-        train=dataset.sample(frac=0.8,random_state=1)
-        test=dataset.loc[~ dataset.index.isin(train.index)]
+        self.train=self.dataset.sample(frac=0.8,random_state=1)
+        self.test=self.dataset.loc[~ self.dataset.index.isin(self.train.index)]
+        #self.test=self.dataset.sample(frac=0.5,random_state=1)
         
-        
-    def best_predict():
+    def best_predict(self):
         #call all predict functions if  checked_data is true 
         # choose least error "best algorithm for data "
         # return summary of the best predict 
-        if check_data()=="valid":
-            linear_reg()
-            RF_reg()
-            ploynomial_reg()
-            return pre_dict
+        if self.check_data()=="valid":
+            self.linear_reg()
+            self.RF_reg()
+            self.ploynomial_reg()
+            return self.pre_dict
         else:
             print("clean ur data and prepare first")
             
         
-    def linear_reg():
+    def linear_reg(self):
         #return error
         from sklearn.linear_model import LinearRegression
         from sklearn.metrics import mean_squared_error
         pre_dict=LinearRegression()
-        pre_dict.fit(train[columns],train[target])
-        prediction=pre_dict.predict(test[columns])
-        error=mean_squared_error(prediction,test[target])
+        pre_dict.fit(self.train[self.predict_columns],self.train[self.target])
+        prediction=pre_dict.predict(self.test[self.predict_columns])
+        self.error=mean_squared_error(prediction,self.test[self.target])
 
         
         
-    def RF_reg():
+    def RF_reg(self):
         #return error
         #random forest
         from sklearn.ensemble import RandomForestRegressor
+        from sklearn.metrics import mean_squared_error
         rfr=RandomForestRegressor(n_estimators=100,min_samples_leaf=10,random_state=1)
-        rfr.fit(train[columns],train[target])
-        pre=rfr.predict(test[columns])
-        error_=mean_squared_error(pre,test[target])
-        if(error_<error):
-            pre_dict=rfr
-            error=error_
+        rfr.fit(self.train[self.predict_columns],self.train[self.target])
+        pre=rfr.predict(self.test[self.predict_columns])
+        error_=mean_squared_error(pre,self.test[self.target])
+        if(error_<self.error):
+            self.pre_dict=rfr
+            self.error=error_
         
         
-    def ploynomial_reg():
+    def ploynomial_reg(self):
         #return error 
         # ploynomial regression with its all possible degrees and return the best one 
         ploy_error=100
-        lin_regressor
-        m=dataset.shape[0]
-        m_error
+        from sklearn.metrics import mean_squared_error
+        lin_regressor=""
+        m=self.dataset.shape[0]
+        m_error=""
         for i in range(1,m):
             lin_regressor = LinearRegression()
             poly = PolynomialFeatures(i)
-            X_transform = poly.fit_transform(train[predict_columns])
-            lin_regressor.fit(X_transform,y_train[target]) 
-            y_preds = lin_regressor.predict(test[predict_columns])
-            m_error=mean_squared_error(y_preds,test[target])
+            X_transform = poly.fit_transform(self.train[self.predict_columns])
+            lin_regressor.fit(X_transform,self.train[self.target]) 
+            
+            y_preds = lin_regressor.predict(self.test[self.predict_columns])
+            m_error=mean_squared_error(y_preds,self.test[self.target])
             if(m_error+0.0001<ploy_error):
                 ploy_error=m_error
             else:
                 break
-        if(ploy_error<error):
-            pre_dict=lin_regressor
-            error=m_error
-        return 
+        if(ploy_error<self.error):
+            self.pre_dict=lin_regressor
+            self.error=m_error
+
+     
         
         
-    def predict(varibles):
+    #def predict(varibles):
         #take array of paramters country year job title 
         # return the predict "" count of jobs of this job "" 
-        
-        
-        
-        
-        
+      
