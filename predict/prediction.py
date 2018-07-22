@@ -13,7 +13,7 @@ from pandas.api.types import is_numeric_dtype
 from pandas.api.types import is_string_dtype
 
 #class prediction
-class prediction:
+class prediction_Class:
     dataset
     predict_columns
     target
@@ -40,7 +40,7 @@ class prediction:
         #check validation of data
         # make checked_data true for valid or false for not valid
         #return"valid or not valid "
-        if (dataset.isnull().sum().sum() == 0)
+        if (dataset.isnull().sum().sum() == 0):
             numerical=false
             for i in predic_columns:
                 if(is_numeric_dtype(dataset[i])):
@@ -69,7 +69,7 @@ class prediction:
             dataset = dataset.dropna(axis = 0)
            
         #return the dataset after cleaning
-       return dataset,deleted
+        return dataset,deleted
 
     def encode(data,column):
         i=0
@@ -85,8 +85,8 @@ class prediction:
         return col
 
     def write(filename,my_dict):
-    with open(filename, 'w') as f:
-        [f.write('{0},{1}\n'.format(key, value)) for key, value in my_dict.items()]
+        with open(filename, 'w') as f:
+            [f.write('{0},{1}\n'.format(key, value)) for key, value in my_dict.items()]
     
         
     def prepare():
@@ -146,7 +146,7 @@ class prediction:
         lin_regressor
         m=dataset.shape[0]
         m_error
-        for i in range (1:m):
+        for i in range(1,m):
             lin_regressor = LinearRegression()
             poly = PolynomialFeatures(i)
             X_transform = poly.fit_transform(train[predict_columns])
@@ -160,7 +160,7 @@ class prediction:
         if(ploy_error<error):
             pre_dict=lin_regressor
             error=m_error
-        
+        return 
         
         
     def predict(varibles):
