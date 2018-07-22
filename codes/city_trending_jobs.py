@@ -18,12 +18,11 @@ def count (filepath,city):
     newdata = newdata[newdata.job_date == 2018]
     return newdata
     
-new = count(r'C:\Users\sara\Desktop\WM\Job-prediction\data\jobDataset_All.csv', 'Makkah')        
-
+new = count(r'C:\Users\sara\Desktop\jobDataset_All.csv', 'Jeddah')        
 def encode(data,column):  
-   col=dict()
+   col= dict()
    for q in range(len(data)):
-       x=data.iloc[q][column]
+       x = data.iloc[q][column]
        if not data.iloc[q][column] in col:
            col.update({x:1})
        else:
@@ -40,17 +39,17 @@ for key, value in sorted_by_value:
         rate.append(value)
         c = c+1
         
-    
+
 
 
 #https://medium.com/python-pandemonium/data-visualization-in-python-bar-graph-in-matplotlib-f1738602e9c4
 def plot_bar_x():
     # this is for plotting purpose
     index = np.arange(len(specialty))
-    plt.bar(index, rate)
+    plt.bar(index, rate, color = 'cgmbyr')
     plt.xlabel('Jobs', fontsize=5)
     plt.ylabel('Growth rate', fontsize=5)
-    plt.xticks(index, specialty, fontsize=5, rotation=80)
+    plt.xticks(index, specialty, fontsize=10, rotation=80)
     plt.title('Trending jobs')
     plt.show()
     
