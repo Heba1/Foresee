@@ -4,6 +4,8 @@ Created on Thu Jul 19 15:02:12 2018
 
 @author: Sara
 """
+from flask import Flask
+app = Flask(__name__)
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -55,3 +57,25 @@ def plot_bar_x():
     
     
 plot_bar_x()   
+
+script, div = components(plot_bar_x())
+
+# Return the webpage
+return """
+<!doctype html>
+<head>
+ <title>My wonderful trigonometric webpage</title>
+ {bokeh_css}
+</head>
+<body>
+ <h1>Everyone loves trig!
+ {div}
+
+ {bokeh_js}
+ {script}
+</body>
+ """.format(script=script, div=div, bokeh_css=CDN.render_css(),
+ bokeh_js=CDN.render_js())
+
+if __name__ == "__main__":
+ app.run(host='0.0.0.0', port=80)
