@@ -65,7 +65,7 @@ plot_bar_x()
 app = dash.Dash(__name__)
 app.layout = html.Div(children=[
             html.H1(children='Dash Tutorials'),
-            dcc.Graph(        id='example',
+            dcc.Graph(id='example',
                       figure={
                               'data': [{'x': specialty, 'y': rate, 'type': 'bar', 'name': 'Cars'},],
                               'layout': {'title': 'Trending jobs'}
