@@ -18,7 +18,7 @@ def count (filepath,city):
     newdata = newdata[newdata.job_date == 2018]
     return newdata
     
-new = count(r'C:\Users\sara\Desktop\jobDataset_All.csv', 'Jeddah')        
+new = count(r'C:\Users\sara\Desktop\jobDataset_All ver.2.csv', 'Makkah')        
 def encode(data,column):  
    col= dict()
    for q in range(len(data)):
@@ -49,7 +49,7 @@ def plot_bar_x():
     plt.bar(index, rate, color = 'cgmbyr')
     plt.xlabel('Jobs', fontsize=5)
     plt.ylabel('Growth rate', fontsize=5)
-    plt.xticks(index, specialty, fontsize=10, rotation=80)
+    plt.xticks(index, specialty, fontsize=10, rotation=90)
     plt.title('Trending jobs')
     plt.show()
     
