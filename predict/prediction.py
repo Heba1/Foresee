@@ -123,8 +123,9 @@ class prediction_Class:
         # choose least error "best algorithm for data "
         # return summary of the best predict 
         if self.check_data()=="valid":
-            #plt.plot(self.train[self.predict_columns],self.train[self.target])
-            #plt.show()
+            plt.scatter(self.train[self.predict_columns],self.train[self.target])
+            plt.axis([2007,2019,0,5])
+            plt.show()
           
             self.linear_reg(data)
             self.RF_reg(data)
@@ -149,7 +150,6 @@ class prediction_Class:
         self.error=mean_squared_error(prediction,self.test[self.target])
         self.name_bestPredict="linear"
         self.pre_dict=pre_dict
-        
         
     def RF_reg(self,data=dataset):
         #return error
@@ -183,14 +183,14 @@ class prediction_Class:
             lin_regressor.fit(X_transform,self.train[self.target].reset_index().values) 
             y_transform = poly.fit_transform(self.test[self.predict_columns].reset_index().values)
             y_preds = lin_regressor.predict(y_transform)
-<<<<<<< HEAD
+
            
             
             plt.plot(self.train[self.predict_columns].reset_index().values, lin_regressor.predict(X_transform),color='g')
             plt.axis([2008,2019,0,10])
-=======
+
             #plt.plot(self.train[self.predict_columns].reset_index().values, lin_regressor.predict(X_transform),color='g')
->>>>>>> 01c088dc8e9cb3cc6880ace1b352d83be6c95d0a
+
             m_error=mean_squared_error(y_preds,self.test[self.target].reset_index().values)
             if(m_error+0.0001<ploy_error):
                 ploy_error=m_error
@@ -242,17 +242,18 @@ class prediction_Class:
         self.best_predict(n_data)
         
         y_transform=datee["date"]
+        
        
         if self.name_bestPredict=="poly":
             pol = PolynomialFeatures(self.poly)
             y_transform = pol.fit_transform(y_transform.reset_index().values)
             
-        y_preds = self.pre_dict.predict(y_transform)
+        y_preds = self.pre_dict.predict([[2017],[2018],[2019],[2020]])
         plt.cla()
         plt.clf()
             
-        plt.plot(datee["date"].reset_index().values, y_preds,color='r')
-        plt.axis([2018,2030,0,10])
+        plt.scatter([[2017],[2018],[2019],[2020]], y_preds,color='r')
+        plt.axis([2016,2030,0,5])
         
         return plt
             
@@ -308,13 +309,13 @@ class prediction_Class:
     
         
         
-<<<<<<< HEAD
+
    
 
-=======
+
     #def predict(varibles):
         #take array of paramters country year job title 
         # return the predict "" count of jobs of this job "" 
         
       
->>>>>>> 01c088dc8e9cb3cc6880ace1b352d83be6c95d0a
+
