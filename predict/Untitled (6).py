@@ -58,14 +58,16 @@ n_data
 
 # In[84]:
 
-pre_cols=["date"]
+pre_cols=["job_date"]
 target="count"
 n_data["date"]=pd.to_numeric(n_data["date"], errors='coerce')
 n_data["count"]=pd.to_numeric(n_data["count"], errors='coerce')
 n_data.sort_values('date')
-n_data["date"]-=2008
-p =prediction_Class(n_data,pre_cols,target)
+dataset["job_date"]=pd.to_numeric(dataset["job_date"], errors='coerce')
+p =prediction_Class(dataset,pre_cols,target)
 
+pl=p.predict("Accounting And Auditing")
+pl.show()
 
 # In[87]:
 n=p.clean_data()

@@ -1,5 +1,5 @@
 import sys
-import pandas
+import pandas as pd
 import sklearn
 import seaborn
 import matplotlib
@@ -38,7 +38,12 @@ class prediction_Class:
     train=""
     #test
     test=""
-    
+    # the values we wanna preict 
+    v_predict=""
+    #name of best predict
+    name_bestPredict=""
+    #poly
+    poly=""
     
     
     def __init__(self,datase,predic_columns,targe):
@@ -99,37 +104,42 @@ class prediction_Class:
             [f.write('{0},{1}\n'.format(key, value)) for key, value in my_dict.items()]
     
         
-    def prepare(self):
+    def prepare(self,data=dataset):
         #split data to training and test 
         # return boolen "true "if done "false " if not
         
         for col in self.predict_columns :
-            if (str(self.dataset[col].dtype)!='int64'):
+            if (str(data[col].dtype)!='int64'):
                 en_code=self.encode(self.dataset,col)
                 self.write(col,en_code)
         from sklearn.cross_validation import train_test_split
-        self.train=self.dataset.sample(frac=1,random_state=None)
-        self.train=self.train.sort_values('date')
+        self.train=data.sample(frac=1,random_state=None)
+        self.train=self.train.sort_values('job_date')
         #self.test=self.dataset.loc[~ self.dataset.index.isin(self.train.index)]
         self.test=self.train
         
-    def best_predict(self):
+    def best_predict(self,data=dataset):
         #call all predict functions if  checked_data is true 
         # choose least error "best algorithm for data "
         # return summary of the best predict 
         if self.check_data()=="valid":
-            plt.plot(self.train[self.predict_columns],self.train[self.target])
-            plt.show()
+            #plt.plot(self.train[self.predict_columns],self.train[self.target])
+            #plt.show()
           
-            self.linear_reg()
-            self.RF_reg()
-            self.ploynomial_reg()
+            self.linear_reg(data)
+            self.RF_reg(data)
+            #self.ploynomial_reg(data)
             return self.pre_dict
         else:
             print("clean ur data and prepare first")
-            
+       
         
-    def linear_reg(self):
+    def algo_reg(self,data=dataset):
+        count=list()
+        for i in data["count"]:
+            count.append(math.log(i,10))
+        data["count"]=count
+    def linear_reg(self,data=dataset):
         #return error
         from sklearn.linear_model import LinearRegression
         from sklearn.metrics import mean_squared_error
@@ -137,10 +147,11 @@ class prediction_Class:
         pre_dict.fit(self.train[self.predict_columns],self.train[self.target])
         prediction=pre_dict.predict(self.test[self.predict_columns])
         self.error=mean_squared_error(prediction,self.test[self.target])
-
+        self.name_bestPredict="linear"
+        self.pre_dict=pre_dict
         
         
-    def RF_reg(self):
+    def RF_reg(self,data=dataset):
         #return error
         #random forest
         from sklearn.ensemble import RandomForestRegressor
@@ -154,16 +165,16 @@ class prediction_Class:
             self.error=error_
         
         
-    def ploynomial_reg(self):
+    def ploynomial_reg(self,data=dataset):
         #return error 
         # ploynomial regression with its all possible degrees and return the best one 
         ploy_error=1000000000000000000000
         from sklearn.metrics import mean_squared_error
         lin_regressor=""
-        m=self.dataset.shape[0]
+        m=data.shape[0]
         m_error=""
-        
-        
+        i=0
+        poly=""
         for i in range(1,m):
             lin_regressor = LinearRegression()
             poly = PolynomialFeatures(i)
@@ -172,15 +183,82 @@ class prediction_Class:
             lin_regressor.fit(X_transform,self.train[self.target].reset_index().values) 
             y_transform = poly.fit_transform(self.test[self.predict_columns].reset_index().values)
             y_preds = lin_regressor.predict(y_transform)
+           
+            
             plt.plot(self.train[self.predict_columns].reset_index().values, lin_regressor.predict(X_transform),color='g')
+            plt.axis([2008,2019,0,10])
             m_error=mean_squared_error(y_preds,self.test[self.target].reset_index().values)
             if(m_error+0.0001<ploy_error):
                 ploy_error=m_error
             
        
         if(ploy_error<self.error):
+            
+            
             self.pre_dict=lin_regressor
             self.error=m_error
+            self.name_bestPredict="poly"
+            self.poly=i
+            
+            
+    def get_count(self,specillaty , country="saudi"):
+         new=self.dataset[self.dataset.job_specialty==specillaty]
+         if country !="saudi":
+             new=self.dataset[self.dataset.job_location==country]
+         else:
+             new["job_location"]=country
+             
+         city_date=dict()
+         for i in range(len(new)):
+            x=new.iloc[i]
+            if not x.job_date in city_date:
+                city_date.update({x.job_date:1})
+            else:
+                city_date[x.job_date]+=1
+         return city_date
+             
+                   
+            
+    def predict(self,specillaty , country="saudi",date1=np.array([2018,2019,2020,2021,2022,2023])):
+        #take array of paramters country year job title 
+        # return the predict "" count of jobs of this job "" 
+        dic=self.get_count(specillaty,country)
+        date=list()
+        count=list()
+
+        for key, value in dic.items():
+            date.append(key)
+            count.append(value)
+        n_data=pd.DataFrame({"job_date":date,"count":count})
+        self.algo_reg(n_data)
+        self.prepare(n_data)
+        datee=pd.DataFrame({"date":date1})
+        
+      
+        self.best_predict(n_data)
+        
+        y_transform=datee["date"]
+       
+        if self.name_bestPredict=="poly":
+            pol = PolynomialFeatures(self.poly)
+            y_transform = pol.fit_transform(y_transform.reset_index().values)
+            
+        y_preds = self.pre_dict.predict(y_transform)
+        plt.cla()
+        plt.clf()
+            
+        plt.plot(datee["date"].reset_index().values, y_preds,color='r')
+        plt.axis([2018,2030,0,10])
+        
+        return plt
+            
+        
+
+# In[82]:
+
+
+
+       
         """
 
         koeficienti_polinom = np.polyfit(self.train[self.predict_columns].values.ravel(), self.train[self.target].values.ravel(), 3)
@@ -226,7 +304,5 @@ class prediction_Class:
     
         
         
-    #def predict(varibles):
-        #take array of paramters country year job title 
-        # return the predict "" count of jobs of this job "" 
-      
+   
+
