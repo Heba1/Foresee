@@ -183,15 +183,19 @@ class prediction_Class:
             lin_regressor.fit(X_transform,self.train[self.target].reset_index().values) 
             y_transform = poly.fit_transform(self.test[self.predict_columns].reset_index().values)
             y_preds = lin_regressor.predict(y_transform)
+<<<<<<< HEAD
            
             
             plt.plot(self.train[self.predict_columns].reset_index().values, lin_regressor.predict(X_transform),color='g')
             plt.axis([2008,2019,0,10])
+=======
+            #plt.plot(self.train[self.predict_columns].reset_index().values, lin_regressor.predict(X_transform),color='g')
+>>>>>>> 01c088dc8e9cb3cc6880ace1b352d83be6c95d0a
             m_error=mean_squared_error(y_preds,self.test[self.target].reset_index().values)
             if(m_error+0.0001<ploy_error):
                 ploy_error=m_error
             
-       
+        plt.plot(self.train[self.predict_columns].reset_index().values, lin_regressor.predict(X_transform),color='g')
         if(ploy_error<self.error):
             
             
@@ -304,5 +308,13 @@ class prediction_Class:
     
         
         
+<<<<<<< HEAD
    
 
+=======
+    #def predict(varibles):
+        #take array of paramters country year job title 
+        # return the predict "" count of jobs of this job "" 
+        
+      
+>>>>>>> 01c088dc8e9cb3cc6880ace1b352d83be6c95d0a

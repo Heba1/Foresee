@@ -52,7 +52,7 @@ n_data=pd.DataFrame({"date":date,"count":count})
 
 # In[83]:
 
-n_data
+print(n_data)
 
 
 
