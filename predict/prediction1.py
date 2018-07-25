@@ -39,7 +39,7 @@ class prediction_Class:
     #test
     test=""
     
-    
+    poly=""
     
     def __init__(self,datase,predic_columns,targe):
         #initialization of data
@@ -119,6 +119,7 @@ class prediction_Class:
         # return summary of the best predict 
         if self.check_data()=="valid":
             plt.plot(self.train[self.predict_columns],self.train[self.target])
+            plt.axis([2013,2019,0,1000])
             plt.show()
           
             self.linear_reg()
@@ -165,20 +166,23 @@ class prediction_Class:
         
         
         for i in range(1,m):
-            lin_regressor = LinearRegression()
-            poly = PolynomialFeatures(i)
-            X_transform = poly.fit_transform(self.train[self.predict_columns].reset_index().values)
+            lin_regressor = LinearRegression(normalize=True)
+            self.poly = PolynomialFeatures(i)
+            X_transform = self.poly.fit_transform(self.train[self.predict_columns].reset_index().values)
            
             lin_regressor.fit(X_transform,self.train[self.target].reset_index().values) 
-            y_transform = poly.fit_transform(self.test[self.predict_columns].reset_index().values)
+            y_transform = self.poly.transform(self.test[self.predict_columns].reset_index().values)
             y_preds = lin_regressor.predict(y_transform)
-            plt.plot(self.train[self.predict_columns].reset_index().values, lin_regressor.predict(X_transform),color='g')
+            #plt.plot(self.train[self.predict_columns].reset_index().values, lin_regressor.predict(X_transform),color='g')
+            #plt.axis([2013,2019,0,1000])
             m_error=mean_squared_error(y_preds,self.test[self.target].reset_index().values)
             if(m_error+0.0001<ploy_error):
+                
                 ploy_error=m_error
-            
+        plt.plot(self.train[self.predict_columns].reset_index().values, lin_regressor.predict(X_transform),color='g')
+        plt.axis([2013,2019,0,1000])
        
-        if(ploy_error<self.error):
+        if(ploy_error+5<self.error):
             self.pre_dict=lin_regressor
             self.error=m_error
         """
